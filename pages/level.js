@@ -19,8 +19,9 @@ export async function renderLevel(content, listName = "demonlist", id) {
                 <div class="level-main">
                     <div class="level-title">
                         <h1>${level.name}</h1>
-                        <p>by ${level.creator}</p>
-                        <p>published by ${level.publisher}</p>
+                        <p>By ${level.creator}</p>
+                        <p>Published by ${level.publisher}</p>
+                        <p>Verified by ${level.verifier}</p>
                     </div>
 
                     <div class="level-media">
