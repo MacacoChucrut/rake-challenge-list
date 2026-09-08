@@ -24,9 +24,9 @@ export async function renderList(content, listName = "demonlist") {
         data.forEach((item, index) => {
             const fileName = levelNames[index];
             const card = document.createElement("div");
-
             const rank = index + 1;
             const levelPoints = getLevelPoints(rank, levelNames.length);
+            const videoUrl = item.thumbnail || item.verification;
 
             card.className = "card";
 
@@ -36,7 +36,7 @@ export async function renderList(content, listName = "demonlist") {
 
             card.innerHTML = `
                 <a href="${item.verification}" target="_blank">
-                    <img src="${getThumbnailFromId(item.verification)}">
+                    <img src="${getThumbnailFromId(videoUrl)}">
                 </a>
 
                 <div class="card-text">
