@@ -1,6 +1,6 @@
 import { getYouTubeEmbedUrl, getLevelPoints } from "../utils.js";
 
-export async function renderLevel(content, listName = "demonlist", id) {
+export async function renderLevel(content, listName = "list", id) {
     try {
         const [levelResponse, listResponse] = await Promise.all([
             fetch(`./_${listName}/${id}.json`),
