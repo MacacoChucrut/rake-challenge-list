@@ -12,6 +12,9 @@ export async function renderList(content, listName = "demonlist") {
     try {
         const listResponse = await fetch(`./_${listName}/_list.json`);
         const levelNames = await listResponse.json();
+
+        const rank = levelNames.index + 1;
+        const levelPoints = getLevelPoints(rank, levelNames.length);
         
         const responses = await Promise.all(
             levelNames.map(id => fetch(`./_${listName}/${id}.json`))
@@ -23,8 +26,6 @@ export async function renderList(content, listName = "demonlist") {
 
         data.forEach((item, index) => {
             const fileName = levelNames[index];
-            const rank = levelNames.indexOf(id) + 1;
-            const levelPoints = getLevelPoints(rank, levelNames.length);
             const card = document.createElement("div");
 
             card.className = "card";
