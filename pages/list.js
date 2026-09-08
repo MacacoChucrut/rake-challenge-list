@@ -1,6 +1,6 @@
 import { getThumbnailFromId, getLevelPoints } from "../utils.js";
 
-export async function renderList(content, listName = "list") {
+export async function renderList(content, listName = "demonlist") {
     content.innerHTML = `
     <div class="list-page">
         <div id="list"></div>
@@ -10,11 +10,11 @@ export async function renderList(content, listName = "list") {
     const list = document.getElementById("list");
 
     try {
-        const listResponse = await fetch(`./${listName}/_list.json`);
+        const listResponse = await fetch(`./_${listName}/_list.json`);
         const levelNames = await listResponse.json();
 
         const responses = await Promise.all(
-            levelNames.map(id => fetch(`./${listName}/${id}.json`))
+            levelNames.map(id => fetch(`./_${listName}/${id}.json`))
         );
 
         const data = await Promise.all(
