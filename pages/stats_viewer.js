@@ -1,6 +1,6 @@
 import { getLevelPoints } from "../utils.js";
 
-export async function renderStatsViewer(content, listName = "demonlist") {
+export async function renderStatsViewer(content, listName = "list") {
     try {
         const listResponse = await fetch(`./_${listName}/_list.json`);
         const levelNames = await listResponse.json();
@@ -22,25 +22,16 @@ export async function renderStatsViewer(content, listName = "demonlist") {
             }
         };
 
-        initPlayer("graymatr");
-
         const totalLevels = levelsData.length;
 
         levelsData.forEach((level, index) => {
             const rank = index + 1;
             const levelPoints = parseFloat(getLevelPoints(rank, totalLevels));
 
-            players["graymatr"].points += levelPoints;
-            players["graymatr"].completed.push({
-                name: level.name,
-                rank: rank
-            });
-
             if (level.records && level.records.length > 0) {
                 level.records.forEach(record => {
                     const userName = record.user;
-                    if (userName.toLowerCase() !== "graymatr") {
-                        initPlayer(userName);
+                    if (userName) {
                         players[userName].points += levelPoints;
                         players[userName].completed.push({
                             name: level.name,
@@ -51,7 +42,7 @@ export async function renderStatsViewer(content, listName = "demonlist") {
             }
         });
 
-        const leaderboard = Object.values(players).sort((a, b) => b.points - a.points);
+        const playerList = Object.values(players).sort((a, b) => b.points - a.points);
 
         content.innerHTML = `
             <div class="stats-viewer-page">
@@ -60,7 +51,7 @@ export async function renderStatsViewer(content, listName = "demonlist") {
                         <input type="text" id="player-search" placeholder="Search Players...">
                     </div>
                     <ul id="players-list">
-                        ${renderPlayerListItems(leaderboard)}
+                        ${renderPlayerListItems(playerList)}
                     </ul>
                 </div>
                 <div class="stats-content" id="player-details"></div>
