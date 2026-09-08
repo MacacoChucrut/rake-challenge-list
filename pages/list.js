@@ -25,8 +25,8 @@ export async function renderList(content, listName = "demonlist") {
             const fileName = levelNames[index];
             const card = document.createElement("div");
 
-            const rank = levelNames.index + 1;
-        const levelPoints = getLevelPoints(rank, levelNames.length);
+            const rank = index + 1;
+            const levelPoints = getLevelPoints(rank, levelNames.length);
 
             card.className = "card";
 
