@@ -38,7 +38,7 @@ export async function renderList(content, listName = "demonlist") {
 
                 <div class="card-text">
                     <h3>#${index + 1} - ${item.name}</h3>
-                    <h4>${item.publisher}</h4>
+                    <h4>Points - ${levelPoints}</h4>
                 </div>
             `;
 
