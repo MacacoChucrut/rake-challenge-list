@@ -4,6 +4,7 @@
 }
 
 .card {
+    background: var(--background);
     margin: 2rem 0;
     padding: 1rem;
     display: flex;
