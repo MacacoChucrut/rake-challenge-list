@@ -1,0 +1,51 @@
+.stats-viewer-page {
+    margin: 0 auto;
+    width: 50%;
+    color: var(--text-primary);
+    display: flex;
+}
+
+.stats-players {
+    width: 50%;
+}
+
+.search-bar input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid var(--text-primary);
+}
+
+#players-list {
+    overflow-y: auto;
+    border: 1px solid var(--text-primary);
+    padding: 0;
+}
+
+.player-item {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    cursor: pointer;
+}
+
+.player-item:hover, .player-item.active {
+    background: var(--color-hover);
+    transition: 0.3s;
+}
+
+.player-item:not(:hover) {
+    transition: 0.3s;
+}
+
+.stats-content {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.stats-top {
+    display: flex;
+    justify-content: space-around;
+}

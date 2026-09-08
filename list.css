@@ -1,0 +1,26 @@
+.list-page {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.card {
+    margin: 2rem 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    user-select: none;
+    border: 2px dashed var(--color-hover);
+}
+
+.card img {
+    height: 10rem;
+    margin-right: 1rem;
+}
+
+.card-text {
+    cursor: pointer;
+}
+
+.card-text h4 {
+    color: var(--text-primary);
+}
