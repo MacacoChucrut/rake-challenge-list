@@ -1,6 +1,6 @@
 import { getThumbnailFromId, getLevelPoints } from "../utils.js";
 
-export async function renderList(content, listName = "list") {
+export async function renderList(content, listName = "demonlist") {
     content.innerHTML = `
     <div class="list-page">
         <div id="list"></div>
