@@ -66,6 +66,7 @@ header a {
 
 .bg-images img {
     position: fixed;
+    z-index: -1;
 }
 
 #bg-left {
