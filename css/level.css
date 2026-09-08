@@ -4,6 +4,7 @@
 }
 
 .level-main {
+    background: var(--header);
     color: var(--text-primary);
     border: 2px dashed var(--color-hover);
     padding: 1rem 0;
@@ -35,6 +36,7 @@
 }
 
 .level-records {
+    background: var(--header);
     color: var(--text-primary);
     border: 2px dashed var(--color-hover);
     padding: 1rem 0;
