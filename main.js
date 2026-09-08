@@ -4,7 +4,7 @@ import { renderStatsViewer } from "./pages/stats_viewer.js";
 
 const statsViewerBtn = document.getElementById("nav-stats-viewer");
 const content = document.getElementById("content");
-const DEFAULT_LIST = "list";
+const DEFAULT_LIST = "demonlist";
 
 function router() {
     const path = location.hash.replace(/^#\/?/, ""); 

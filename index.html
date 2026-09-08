@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/level.css">
     <link rel="stylesheet" href="css/stats_viewer.css">
     <link rel="icon" href="assets/icon.jpg">
-    <title>Rake Challenge List</title>
+    <title>graymatr's demonlist</title>
 </head>
 
 <body>
@@ -18,13 +18,21 @@
     <header>
         <div class="header-content">
             <div class="header-logo">
-                <a href="#/list"><img src="./assets/icon.jpg">RCL</a>
+                <a href="#/demonlist"><img src="./assets/icon.jpg">GRAYMATR'S DEMONLIST</a>
             </div>
 
             <div class="header-buttons">
                 <a id="theme-toggle">Toggle Theme</a>
-                <a href="#/list">List</a>
-                <a id="nav-stats-viewer" href="#/list/stats_viewer">Stats Viewer</a>
+            
+                <div class="dropdown">
+                    <a class="dropdown-btn">Lists ▾</a>
+                    <div class="dropdown-content">
+                        <a href="#/demonlist">Demonlist</a>
+                        <a href="#/minty">MintyGDPS</a>
+                    </div>
+                </div>
+
+                <a id="nav-stats-viewer" href="#/demonlist/leaderboard">Stats Viewer</a>
             </div>
         </div>
     </header>
