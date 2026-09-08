@@ -23,6 +23,8 @@ export async function renderList(content, listName = "demonlist") {
 
         data.forEach((item, index) => {
             const fileName = levelNames[index];
+            const rank = levelNames.indexOf(id) + 1;
+            const levelPoints = getLevelPoints(rank, levelNames.length);
             const card = document.createElement("div");
 
             card.className = "card";
