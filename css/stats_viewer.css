@@ -18,6 +18,7 @@
 }
 
 #players-list {
+    background: var(--header);
     overflow-y: auto;
     border: 1px solid var(--text-primary);
     padding: 0;
