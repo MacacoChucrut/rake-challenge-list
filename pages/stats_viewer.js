@@ -22,24 +22,25 @@ export async function renderStatsViewer(content, listName = "demonlist") {
             }
         };
 
-        initPlayer("graymatr");
-
         const totalLevels = levelsData.length;
 
         levelsData.forEach((level, index) => {
             const rank = index + 1;
             const levelPoints = parseFloat(getLevelPoints(rank, totalLevels));
-
-            players["graymatr"].points += levelPoints;
-            players["graymatr"].completed.push({
-                name: level.name,
-                rank: rank
-            });
-
+            
+            if (level.verifier) {
+                initPlayer(level.verifier);
+                players[level.verifier].points += levelPoints;
+                players[level.verifier].completed.push({
+                    name: level.name,
+                    rank: rank
+                });
+            }
+            
             if (level.records && level.records.length > 0) {
                 level.records.forEach(record => {
                     const userName = record.user;
-                    if (userName.toLowerCase() !== "graymatr") {
+                    if (userName !== level.verifier) {
                         initPlayer(userName);
                         players[userName].points += levelPoints;
                         players[userName].completed.push({
@@ -103,7 +104,7 @@ export async function renderStatsViewer(content, listName = "demonlist") {
                 </div>
 
                 <div class="stats-completed">
-                    <h3>Completed demons</h3>
+                    <h3>Completed</h3>
                     <p>
                         ${sortedCompleted.length > 0 
                             ? sortedCompleted.map(d => d.name).join(" - ")
