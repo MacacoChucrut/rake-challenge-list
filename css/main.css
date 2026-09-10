@@ -67,17 +67,17 @@ header a {
 .bg-images img {
     position: fixed;
     z-index: -1;
-    filter: hue-rotate(120deg);
+    filter: hue-rotate(40deg);
 }
 
 #bg-left {
     top: 0;
-    left: -3rem;
+    left: -4rem;
 }
 
 #bg-right {
     top: 0;
-    right: -3rem;
+    right: -4rem;
 }
 
 /*-------------------------------------------------- HEADER LOGO --------------------------------------------------*/
