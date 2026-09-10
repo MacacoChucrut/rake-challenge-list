@@ -9,8 +9,11 @@
     width: 50%;
 }
 
-.search-bar input {
+.search-bar {
     background: var(--header);
+}
+
+.search-bar input {
     box-sizing: border-box;
     width: 100%;
     padding: 1rem;
