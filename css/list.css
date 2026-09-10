@@ -1,6 +1,6 @@
 .list-page {
     margin: 0 auto;
-    width: 70%;
+    width: 60%;
 }
 
 .card {
@@ -14,7 +14,7 @@
 }
 
 .card img {
-    height: 8rem;
+    height: 7rem;
     margin-right: 1rem;
 }
 
