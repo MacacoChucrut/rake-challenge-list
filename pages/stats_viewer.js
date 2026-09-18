@@ -1,6 +1,6 @@
 import { getLevelPoints } from "../utils.js";
 
-export async function renderStatsViewer(content, listName = "demonlist") {
+export async function renderStatsViewer(content, listName = "no-rt") {
     try {
         const listResponse = await fetch(`./_${listName}/_list.json`);
         const levelNames = await listResponse.json();
